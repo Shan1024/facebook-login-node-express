@@ -116,4 +116,4 @@ function ensureAuthenticated(req, res, next) {
 
 console.log("PORT: "+port);
 
-app.listen(8080);
+app.listen(port);

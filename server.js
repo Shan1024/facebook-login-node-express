@@ -90,10 +90,16 @@ app.get('/auth/facebook', passport.authenticate('facebook',{scope:'email'}));
 
 
 app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { successRedirect : '/', failureRedirect: '/login' }),
+  passport.authenticate('facebook', { successRedirect : '/', failureRedirect: '/login' })
+  ,
   function(req, res) {
     res.redirect('/');
-  });
+  }
+  );
+
+// app.get('/success', function(req, res, next) {
+//   res.send('Successfully logged in.');
+// });
 
 app.get('/logout', function(req, res){
   req.logout();
@@ -106,4 +112,4 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/login')
 }
 
-app.listen(8080);
+app.listen(3000);

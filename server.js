@@ -114,4 +114,6 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/login')
 }
 
+console.log("PORT: "+port);
+
 app.listen(port);

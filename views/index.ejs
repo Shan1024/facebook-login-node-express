@@ -9,7 +9,14 @@
 	<a href="/auth/facebook"><img src="fb-login.jpg" width="151" height="24"></a>
 	</div>
 <% } else { %>
-	<h2>Hello, <%= user.username %>.</h2>
+	<h2>Hello, <%= user.displayName %>. <img src="https://graph.facebook.com/v2.3/<%= user.id %>/picture"> </h2>
+  <div id="friends" data-id="<%= user.id %>">
+    <ul id="list">Loading ......</ul>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
 <% } %>
+
+
 </body>
 </html>
